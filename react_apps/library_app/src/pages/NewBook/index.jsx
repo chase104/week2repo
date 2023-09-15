@@ -35,7 +35,7 @@ const NewBook = ({ books, setBooks }) => {
   const handleSubmit = (e) => {
     console.log("trying to submit")
     e.preventDefault();
-     setBooks([
+    let newBooksArray = [
       ...books,
       {
         title: title,
@@ -43,7 +43,10 @@ const NewBook = ({ books, setBooks }) => {
         pages: pages,
         id: generateID()
       }
-     ])
+     ]
+     localStorage.setItem('books', JSON.stringify(newBooksArray))
+     setBooks(newBooksArray);
+
      setTitle("")
      setAuthor("")
      setPages(1)

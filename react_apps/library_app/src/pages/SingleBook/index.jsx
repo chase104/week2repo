@@ -18,7 +18,7 @@ const SingleBook = ({books}) => {
     if (myBook !== undefined) {
       setBookToShow(myBook)
     }
-  }, []);
+  }, [books]);
 
   return (
     <div className="page-container">
